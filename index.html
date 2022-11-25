@@ -22,7 +22,7 @@
         const reset = () => setAmount(0);
         const onFlip = () => {
             reset();
-            setFlipped((current)=>!current);
+            setFlipped((current) => !current);
         }
         return (
             <div>
@@ -30,29 +30,29 @@
                 <div>
                     <label htmlFor="minutes">Minutes</label>
                     <input
-                    value={flipped? amount*60 :amount}
-                    id="minutes"
-                    placeholder="Minutes"
-                    type="number"
-                    onChange={onChange}
-                    disabled={flipped}
+                        value={flipped ? amount * 60 : amount}
+                        id="minutes"
+                        placeholder="Minutes"
+                        type="number"
+                        onChange={onChange}
+                        disabled={flipped}
                     />
                 </div>
                 <div>
                     <label htmlFor="hours">Hours</label>
                     <input
-                    value={flipped? amount : Math.round(amount / 60)}
-                    id="minutes"
-                    placeholder="Minutes"
-                    type="number"
-                    onChange={onChange}
-                    disabled={!flipped}
-                />
+                        value={flipped ? amount : Math.round(amount / 60)}
+                        placeholder="Hours"
+                        type="number"
+                        onChange={onChange}
+                        disabled={!flipped}
+                    />
                 </div>
-            <button onClick={reset}>Reset</button>   
-            <button onClick={onFlip}>Filpped</button> 
+                <button onClick={reset}>Reset</button>
+                <button onClick={onFlip}>Flipped</button>
+
             </div>
-        );
+        )
     }
     const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
